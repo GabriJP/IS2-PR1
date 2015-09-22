@@ -1,9 +1,13 @@
+import java.util.Date;
+
 /**
- * Created by Gabriel on 22/09/2015.
+ * Created by usuario on 22/09/2015.
  */
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hola mundo");
-        System.err.println("Hola Álvaro");
+
+        Person p1 = new Person("Ordenador","Listo",new Date(64,3,7));
+        System.out.println(p1.getFullName()+"\n"+p1.getAge());
     }
 }

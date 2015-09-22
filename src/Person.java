@@ -4,6 +4,7 @@ import java.util.Date;
  * Created by usuario on 22/09/2015.
  */
 public class Person {
+
     private final String name;
     private final String surname;
     private final Date birthday;
@@ -28,5 +29,9 @@ public class Person {
 
     public String getFullName(){
         return name + " " + surname;
+    }
+
+    public int getAge(){
+        return (int) ((new Date().getTime()-birthday.getTime())/(1000*60*60*24*365.25));
     }
 }
