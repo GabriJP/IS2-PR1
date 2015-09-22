@@ -5,6 +5,7 @@ import java.util.Date;
  */
 public class Person {
 
+    private static final long MILLISECONDS_PER_YEAR = (long) (60 * 60 * 1000 * 24 * 365.25);
     private final String name;
     private final String surname;
     private final Date birthday;
@@ -32,6 +33,10 @@ public class Person {
     }
 
     public int getAge(){
-        return (int) ((new Date().getTime()-birthday.getTime())/(1000*60*60*24*365.25));
+        return fromMillisToYears(new Date().getTime()-birthday.getTime());
+    }
+
+    private int fromMillisToYears(long millis) {
+        return (int) (millis/MILLISECONDS_PER_YEAR);
     }
 }
